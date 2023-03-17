@@ -1,0 +1,15 @@
+.banner{
+  position: relative;
+  display: flex;
+  aspect-ratio: 16/5 ;
+}
+
+.layers{
+  position: absolute;
+  z-index: -1000;
+  top: 0;}
+
+
+/* img{
+  width: 100%;
+} */

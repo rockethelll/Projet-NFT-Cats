@@ -1,0 +1,11 @@
+<%= render 'layouts/hero-banner' %>
+<main class="container mx-auto mt-28 px-5">
+  <div class="grid  xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 justify-center">
+    <% @items_filtered_by_title.each do |item| %>
+      <%= render partial: 'card', locals:{item: item}  %>
+    <% end %>
+    <% @items_filtered.each do |item| %>
+      <%= render partial: 'card', locals:{item: item}  %>
+    <% end %>
+  </div>
+  </main>

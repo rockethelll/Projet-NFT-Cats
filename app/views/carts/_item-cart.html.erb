@@ -1,0 +1,23 @@
+
+<div class="item-cart-wrapper">
+  <div class="cart-card-wrapper flex justify-between rarity-cart-<%=order_item.item.rarity%>">
+    <div class="item-card cart-card ">  
+      <img src="<%=order_item.item.image_url%>" alt="">
+    </div>
+    <div class="item-card-content flex">
+      <div class="item-card-content-header flex justify-between">
+        <p class="p-content cart-page"><%=order_item.item.title%></p>
+        <p class="p-content cart-page"><%='%.02f' % (order_item.total_price)%> €</p>
+        <%= button_to order_item_path(order_item), method: 'delete', class:'bin-icon' do %>
+          <i class="fas fa-times fa-2x"></i>
+        <% end %>
+        
+      </div>
+      <div class="cart-item-quantity flex ">
+        <%= button_to "-", order_items_reduce_path(order_item), class: "minus" %>    
+        <p class="p-content "><%=order_item.quantity%></p>
+        <%= button_to "+", order_items_add_path(order_item), class: "plus" %> 
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<%= render 'layouts/hero-little' %>
+<main class="main-responsive container mx-auto mt-20 px-5 grid grid-cols-10">
+  <% if @cart.order_items.present? %>
+    <div class="item-section col-span-6">
+      <% @cart.order_items.each do |order_item| %>
+        <%= render partial: "item-cart", locals:{order_item: order_item} %>
+      <% end %>
+    </div>
+    <div class="summary-section col-span-4">
+      <h1 class="sub-title">Summary :</h1>
+      <div class="summary-section-header">
+        <p class="p-content">
+          <%= @cart.total_quantity %> products
+        </p>
+        <%= button_to  cart_path(@cart), method: 'delete' do %>
+          <i class="fas fa-trash fa-2xl"></i>
+        <% end %>
+      </div>
+        <div class="summary-section-footer">
+        <p class="p-content">
+          Total : 
+        </p>
+        <p class="p-content">
+          <%= '%.02f' % @cart.total_price %>€
+        </p>
+        <%= button_to "Payer", checkout_create_path(total: @cart.total_price), class: "btn btn-primary", remote: true, data: { turbo: false } %>
+      </div>
+    </div>
+  <% else %>
+      <div class="sub-title col-span-6">Your cart is empty, go fill it !</div>
+  <% end %>
+</main>

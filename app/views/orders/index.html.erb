@@ -1,0 +1,8 @@
+<main class="container mx-auto mt-20 px-5 cols xl:text-left md:text-center">
+<div class="order-title">Order history</div>
+<div class="order-grid grid xl:grid-cols-3  sm:grid-cols-1 gap-x-8  ">
+<% @orders.each do |order| %>
+    <%= render partial:'orders', locals:{order:order} %>
+    <% end %>
+  </div> 
+</main>

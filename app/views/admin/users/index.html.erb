@@ -1,0 +1,46 @@
+<main>
+  <% if isAdmin? %>
+  <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md" role="alert" text-center">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <%= flash[:success] = "Bienvenue cher administrateur"%>
+  </div>
+  <div class="container mx-auto">
+    <h1 class='text-center my-4'>Gérer les utilisateurs</h1>
+    <p class="my-5 text-center font-bold">Connecté en tant que : <%= current_user.email %></p>
+    <table class="table-auto text-sm text-left text-gray-500 dark:text-gray-400 w-full">
+      <thead class="text-xs text-gray-100 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <th scope="col" class="px-6 py-3 text-white">ID</th>
+        <th scope="col" class="px-6 py-3 text-white">Email</th>
+        <th scope="col" class="px-6 py-3 text-white">Admin</th>
+        <th scope="col" class="px-6 py-3 text-white"></th>
+        <th scope="col" class="px-6 py-3 text-white"></th>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+          <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-white"><%= user.id %></td>
+          <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-white"><%= user.email %></td>
+          <% if user.admin == true %>
+            <td><input type="checkbox" checked disabled></td>
+          <% else %>
+            <td><input type="checkbox" disabled></td>
+          <% end %>
+          <td>
+            <%= link_to 'Éditer', [:edit, :admin, user], class:'btn bg-green-600' %>
+          </td>
+          <td>
+            <%= button_to 'Supprimer', [:admin, user], method: :delete, class:'btn bg-red-600' %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <% else %>
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative text-center" role="alert"">
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <%= flash[:error] = "Vous n'avez pas les droits administrateur" %>
+    </div>
+  
+  <% end %>
+</main>

@@ -1,0 +1,22 @@
+<div class="container mx-auto my-6 flex justify-center items-center devise-card">
+  <div>
+    <h2 class="mb-10 text-3xl font-extrabold text-center">Resend unlock instructions</h2>
+
+    <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'text-white placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base transition duration-500 ease-in-out transform text-black border-transparent rounded-3xl bg-gray-200  focus:border-blueGray-500 focus:bg-white dark:focus:bg-gray-600 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ring-gray-400 pl-6 leading-3 placeholder:text-sm', placeholder:'Email' %>
+      </div>
+
+      <div data-turbo="false" class="text-center my-6">
+        <%= f.submit "Resend unlock instructions", class:'px-10 py-2 text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-3xl text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-400' %>
+      </div>
+    <% end %>
+
+    <div class="mt-6 text-sm text-gray-900">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
+

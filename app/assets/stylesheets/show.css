@@ -1,0 +1,53 @@
+.show-title {
+  font-size: 7rem;
+  font-weight: 800;
+}
+
+.show-description {
+  font-size: 1.5rem;
+}
+
+.show-price {
+  flex: 2;
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.show-price-btn {
+  flex: 1;
+  line-height: 2;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 100px;
+}
+
+.show-card-footer {
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1280px) {
+  .show-item-page {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .show-title {
+    font-size: 4rem;
+  }
+}
+@media only screen and (max-width: 440px) {
+  .show-title {
+    font-size: 3rem;
+  }
+  .show-price {
+    font-size: 2rem;
+  }
+  .show-description {
+    font-size: 1rem;
+  }
+}

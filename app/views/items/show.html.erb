@@ -1,0 +1,30 @@
+<main class="show-item-page container mx-auto mt-28 px-5 flex">
+  <div class=" animate__animated  animate__backInLeft card flex-1">
+    <img class="xl-card-rarity card-rarity" src="<%=image_path("rarity-#{@item.rarity}.png")%>">
+    <div class="big-card item-card card_full max-w-sm overflow-hidden shadow-lg rarity-<%=@item.rarity%>">
+      <div class="card-texture">
+        <img class="w-full" src="https://i.imgur.com/vbCJQJe.png" alt="texture">
+      </div>
+      <div class="card-background">
+        <img class="w-full " src="<%=@item.image_url%>" alt="dimaond">
+      </div>
+    </div>
+  </div>
+  <div class="show-card-content animate__animated  animate__backInRight flex-1">
+    <div class=" show-title"><%= @item.title%></div>
+    <div class="show-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad eaque, ea dicta fugit saepe minima molestias consequatur beatae, nulla, eum tempora perferendis natus pariatur aut?</div>
+    <p class="text-xl mt-5 mb-2">Quantity :</p>
+    <select class="rounded-3xl" name="quantity-item" id="quantity">
+    <option value="">Choose a quantity</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    </select>
+    <div class="card-footer show-card-footer">
+    <div class="show-price "><%= @item.price %> €</div>
+    <%= button_to "Add to cart", order_items_path(item_id: @item.id), class:"btn card-add-btn" %>
+    </div>
+  </div>
+</main>

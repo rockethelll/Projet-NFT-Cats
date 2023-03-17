@@ -1,0 +1,136 @@
+/* ESPACE TOTAL DE LA CARD */
+.card {
+  position: relative;
+  margin: 2rem;
+}
+
+.cart-card-wrapper{
+  position: relative;
+  margin: 1rem;
+}
+
+.card-texture {
+  mix-blend-mode: multiply;
+  position: absolute;
+}
+
+.item-card {
+  position: relative;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 21%,
+    rgba(121, 121, 121, 0.5) 40%,
+    rgba(93, 93, 93, 0.1) 54%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  border-radius: 25px;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
+}
+
+.small-card {
+  width: 20rem;
+  height: 20rem;
+}
+
+.big-card {
+  width: 25rem;
+  height: 25rem;
+}
+
+.cart-card {
+  width: 10rem;
+  height: 10rem;
+}
+
+.card-background {
+  position: absolute;
+  z-index: -1;
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 15px 10px 15px;
+}
+
+.card-title {
+  font-weight: 800;
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--color-font-white);
+}
+
+.card-price {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-font-white);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-font-white);
+  position: relative;
+}
+
+
+.card-rarity {
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  transform: translate(15rem, -3rem);
+  width: 8rem;
+}
+
+.xl-card-rarity {
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  transform: translate(19rem, -3rem);
+  width: 9rem;
+}
+
+
+
+/* RESPONSIVE INDEX PAGE*/
+
+@media only screen and (max-width: 925px) {
+  .item-card {
+    width: 15rem;
+    height: 15rem;
+  }
+  .card-rarity {
+    width: 5rem;
+    transform: translate(12rem, -1.5rem);
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .item-card {
+    width: 15rem;
+    height: 15rem;
+  }
+  .card-rarity {
+    width: 5rem;
+    transform: translate(12rem, -1.5rem);
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .item-index-page{
+    display: flex;
+    justify-content: center;
+  }
+
+  .cart-card-wrapper{
+    position: relative;
+    margin-bottom: 1rem;
+  }
+}
+
+

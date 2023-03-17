@@ -1,0 +1,56 @@
+.rarity-0 {
+  border: 5px solid #aba8af;
+}
+.rarity-1 {
+  border: 5px solid #ff7300;
+}
+.rarity-2 {
+  border: 5px solid #ffe840;
+}
+.rarity-3 {
+  border: 5px solid #00fff8;
+}
+.rarity-4 {
+  border: 5px solid #c116f9;
+}
+.rarity-cart-0 {
+  border: 2px solid #aba8af;
+  border-radius: 25px;
+}
+.rarity-cart-1 {
+  border: 2px solid #ff7300;
+  border-radius: 25px;
+}
+.rarity-cart-2 {
+  border: 2px solid #ffe840;
+  border-radius: 25px;
+}
+.rarity-cart-3 {
+  border: 2px solid #00fff8;
+  border-radius: 25px;
+}
+.rarity-cart-4 {
+  border: 2px solid #c116f9;
+  border-radius: 25px;
+}
+
+.rarity-order-0 {
+  border: 2px solid #aba8af;
+  border-radius: 50%;
+}
+.rarity-order-1 {
+  border: 2px solid #ff7300;
+  border-radius: 50%;
+}
+.rarity-order-2 {
+  border: 2px solid #ffe840;
+  border-radius: 50%;
+}
+.rarity-order-3 {
+  border: 2px solid #00fff8;
+  border-radius: 50%;
+}
+.rarity-order-4 {
+  border: 2px solid #c116f9;
+  border-radius: 50%;
+}

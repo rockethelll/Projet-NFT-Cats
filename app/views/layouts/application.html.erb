@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ProjetChaton</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag image_path('favicon.png') %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fontawesome.com/v5/icons/vial?s=solid&f=classic">
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+
+  <body>
+  <div data-turbo="false">
+  <%= render "layouts/navbar"%>
+  </div>
+      <%= yield %>
+    <div data-turbo="false">
+    <%= render "layouts/footer"%>
+    </div>
+  </body>
+</html>

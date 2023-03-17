@@ -1,0 +1,35 @@
+<div class="order-wrapper ">
+    <% total = 0 %>
+    <div class="order-header">
+      <p>Order n°<%= order.id%><p> 
+      <p><%=order.created_at.to_formatted_s(:long_ordinal)%></p>
+    </div>
+    <% order.order_items.each do |order_item| %>
+      <div class="order-body">
+        <div class="order-body-head">
+          <p><%= order_item.item.title %> </p>
+          <p><%= order_item.item.price %> € </p>
+        </div>
+        <div class="order-card">
+          <img class="rarity-order-<%=order_item.item.rarity%>" src="<%=order_item.item.image_url%>" alt="">
+          <span class="order-quantity">
+            <%= order_item.quantity%>
+          </span>
+        </div>
+        <p class="order-body-footer">Sous-total : <%='%.02f' % (order_item.item.price * order_item.quantity) %> €</p>
+        <% soustotal = order_item.item.price * order_item.quantity %>
+        <% total += soustotal %>
+      </div>  
+    <% end %>
+    <div class="order-footer">
+      <p class="">TOTAL : <%= '%.02f' %total%> €  </p>
+      <%if order.status == "paid" %>
+        <div class="status-wrapper paid" id="status-wrapper">
+          <p><%=order.status%></p>
+        <% elsif order.status == "pending" %>
+          <div class="status-wrapper pending" id="status-wrapper">
+          <p><%=order.status%></p>
+      <% end %>
+    </div>
+  </div>
+</div> 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Salut <%= @user.email %>, vous le récapitulatif de ta commande.</h1>
+
+<p>Commande numéro : <%= @order.id %></p>
+
+<p>Voici la liste de tes articles : </p>
+  <% @order_items.each do |order_item| %>
+    <p>Quantité : <%= order_item.quantity %></p>
+    <p>Titre : <%= order_item.item.title %></p>
+  <% end %>
+
+<p>Nombre total d'articles : <%= @order.total_quantity %></p>
+
+<p>Montant total de la commande : <%= @order.total_price %></p>
+
+<p>A bientôt sur notre site !</p>
+  </body>
+</html>

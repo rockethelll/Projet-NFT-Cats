@@ -1,0 +1,26 @@
+
+<div class="card">
+  <img class="card-rarity" src="<%=image_path("rarity-#{item.rarity}.png")%>">
+  <a href="<%=item_path(item)%>" data-turbo="false">
+    <div class="small-card item-card card_full max-w-sm overflow-hidden shadow-lg rarity-<%=item.rarity%>">
+      <div class="card-texture">
+        <img class="w-full " src="https://i.imgur.com/vbCJQJe.png" alt="texture">
+      </div>
+      <div class="card-background">
+        <img class="w-full " src="<%=item.image_url%>" alt="">
+      </div>
+      <div class="card-content">
+        <div class="card-title"><%= item.title %></div>
+      </a>
+        <div class="card-footer">
+          <div class="card-price "><%= item.price %> €</div>
+            <% if user_signed_in? %>
+              <%= button_to "Add to cart", order_items_path(item_id: item.id), class: "card-add-btn" %>
+            <% else %>
+              <%= button_to "Add to cart", new_user_session_path, class: "card-add-btn"%>
+            <% end %>
+        </div>
+      </div>
+    </div>
+</div>
+

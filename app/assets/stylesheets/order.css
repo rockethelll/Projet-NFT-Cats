@@ -1,0 +1,130 @@
+.order-wrapper {
+  height: fit-content;
+  width: 25rem;
+  border: 2px solid black;
+  border-radius: 25px;
+  margin-bottom: 2rem;
+  max-height: 715px;
+  overflow-y: scroll;
+  position: relative;
+}
+.order-title {
+  font-size: 5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+.order-body > p,
+.order-body-head p,
+.order-footer {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.order-header > p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+}
+.order-header {
+  display: flex;
+  background-color: rgb(122, 122, 122);
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+  padding: 10px 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-body {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid black;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.order-footer {
+  display: flex;
+  border-top: 2px solid black;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.order-card {
+  width: 5rem;
+  position: relative;
+  margin: 1rem;
+}
+
+.order-quantity {
+  width: 25px;
+  height: 25px;
+  background-color: rgb(17, 117, 231);
+  border-radius: 50%;
+  border: 2px white solid;
+  position: absolute;
+  top: 0;
+  right: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.pending {
+  background-color: orange;
+}
+.paid {
+  background-color: rgb(65, 201, 65);
+}
+.status-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  border-radius: 2rem;
+  padding: 2px 15px;
+  padding-bottom: 5px;
+  font-size: 1.5rem;
+}
+
+.status-wrapper > p {
+  line-height: 1.2;
+  color: white;
+}
+
+.order-body-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.order-body-footer {
+  justify-self: center;
+  align-self: end;
+  font-weight: 500;
+  font-style: italic;
+}
+
+@media only screen and (max-width: 510px) {
+  .order-wrapper {
+    width: 22rem;
+  }
+}
+@media only screen and (max-width: 630px) {
+  .order-title {
+    line-height: 1;
+    font-size: 3rem;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 410px) {
+  .order-title {
+    font-size: 2rem;
+  }
+}

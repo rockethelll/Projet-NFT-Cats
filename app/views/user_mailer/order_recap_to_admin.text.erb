@@ -1,0 +1,16 @@
+Salut <%= @user.email %>, vous le récapitulatif de ta commande.
+==========================================================
+
+Commande numéro : <%= @order.id %>
+
+Voici la liste de tes articles : 
+  <% @order_items.each do |order_item| %>
+    Quantité : <%= order_item.quantity %>
+    Titre : <%= order_item.item.title %>
+  <% end %>
+
+Nombre total d'articles : <%= @order.total_quantity %>
+
+Montant total de la commande : <%= @order.total_price %>
+
+A bientôt sur notre site !
